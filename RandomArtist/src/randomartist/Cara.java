@@ -25,7 +25,7 @@ public class Cara extends JPanel implements ActionListener {
     public Cara() {
         setPreferredSize(new Dimension(400,300)); // make panel 400 by 300 pixels
         
-        shapes.add(new RandomStar(200, 200));
+        shapes.add(new RandomHeptagon(200, 200));
         
     }
 

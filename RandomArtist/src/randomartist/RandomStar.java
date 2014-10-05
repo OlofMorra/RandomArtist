@@ -45,19 +45,24 @@ public class RandomStar extends RandomShape {
         coordinateX[3] = (int) (midX + 1.5*height*Math.sin(Math.toRadians(72)));
         coordinateY[3] = (int) (midY - 1.5*height*Math.cos(Math.toRadians(72)));
         
-        coordinateX[4] = (int) (midX + ((0.5*height)/Math.cos(Math.toRadians(54)))*Math.cos(Math.toRadians(18)));
-        coordinateY[4] = (int) (midY - ((0.5*height)/Math.cos(Math.toRadians(54)))*Math.sin(Math.toRadians(18)));
+        coordinateX[4] = (int) (midX + ((0.5*height)/Math.cos(Math.toRadians(36)))*Math.cos(Math.toRadians(18)));
+        coordinateY[4] = (int) (midY + ((0.5*height)/Math.cos(Math.toRadians(36)))*Math.sin(Math.toRadians(18)));
         
-        coordinateX[5] = (int) (midX + 1.5*height*Math.cos(Math.toRadians(36)));
-        coordinateY[5] = (int) (midY - 1.5*height*Math.sin(Math.toRadians(36)));
+        coordinateX[5] = (int) (midX + 1.5*height*Math.cos(Math.toRadians(54)));
+        coordinateY[5] = (int) (midY + 1.5*height*Math.sin(Math.toRadians(54)));
         
-        coordinateX[6] = 90;
-        coordinateY[6] = 90;
+        coordinateX[6] = (int) midX;
+        coordinateY[6] = (int) (midY + (0.5*height)/Math.cos(Math.toRadians(36)));
         
-        for (int i = 0; i<6; i++) {
-        System.out.println(coordinateX[i] + " " + coordinateY[i]);
-        }
-        System.out.println(midX + " " + midY + " " + height);
+        coordinateX[7] = (int) (midX - 1.5*height*Math.cos(Math.toRadians(54)));
+        coordinateY[7] = (int) (midY + 1.5*height*Math.sin(Math.toRadians(54)));
+        
+        coordinateX[8] = (int) (midX - ((0.5*height)/Math.cos(Math.toRadians(36)))*Math.cos(Math.toRadians(18)));
+        coordinateY[8] = (int) (midY + ((0.5*height)/Math.cos(Math.toRadians(36)))*Math.sin(Math.toRadians(18)));
+        
+        coordinateX[9] = (int) (midX - 1.5*height*Math.sin(Math.toRadians(72)));
+        coordinateY[9] = (int) (midY - 1.5*height*Math.cos(Math.toRadians(72)));
+
     }
 
     @Override
