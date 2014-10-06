@@ -51,7 +51,7 @@ public class Cara extends JPanel implements ActionListener {
         
         // create random shapes 
         for (int i = 0; i < 30; i++){
-            int nextShape = random.nextInt(4);
+            int nextShape = random.nextInt(5);
             switch(nextShape) {
                 case 0: shapes.add(new RandomCircle(800, 800));
                     break;
@@ -60,6 +60,8 @@ public class Cara extends JPanel implements ActionListener {
                 case 2: shapes.add(new RandomHeptagon(800, 800));
                     break;
                 case 3: shapes.add(new RandomTriangle(800, 800));
+                    break;
+                case 4: shapes.add(new RandomHeptagon(800, 800));
                     break;
             }
         }

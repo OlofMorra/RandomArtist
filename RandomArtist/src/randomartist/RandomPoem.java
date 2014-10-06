@@ -67,7 +67,14 @@ public class RandomPoem extends RandomShape{
         }
         newLine += ".";
         poem.add(newLine);
-        poem.add("And he lived happily ever after.");
+        int gender = random.nextInt(2);
+        String genderStr;
+        if (gender == 0) {
+            genderStr = "he";
+        } else {
+            genderStr = "she";
+        }
+        poem.add("And " + genderStr + " lived happily ever after.");
         poem.add("The end!");
     }
     
