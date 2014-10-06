@@ -3,6 +3,7 @@ package randomartist;
 /**
  * Author: Jan Heemstra & Olof Morra
  * Course: 2IP90
+ * Hij werkt! Ik kan committen!
  */
 
 import java.awt.*;
