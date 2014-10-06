@@ -3,15 +3,14 @@ package randomartist;
 /**
  * Author: Jan Heemstra & Olof Morra
  * Course: 2IP90
- * Hij werkt! Ik kan committen!
  */
 
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
-import randomartist.RandomShape;
-import randomartist.RandomCircle;
+import randomartist.*;
+
 
 /**
  * starter file for Random Artist homework assignment
@@ -24,10 +23,7 @@ public class Cara extends JPanel implements ActionListener {
     ArrayList<RandomShape> shapes = new ArrayList<RandomShape>();
     
     public Cara() {
-        setPreferredSize(new Dimension(400,300)); // make panel 400 by 300 pixels
-        
-        shapes.add(new RandomHeptagon(200, 200));
-        
+        setPreferredSize(new Dimension(800, 800)); // make panel 800 by 800 pixels        
     }
 
     @Override
@@ -35,8 +31,9 @@ public class Cara extends JPanel implements ActionListener {
         super.paintComponent(g);     // clears the background
         
         // Loop this, 10 to 30 (or more) objects, random amount... 
-        shapes.get(0).draw(g);
-
+        for (RandomShape shape : shapes){
+            shape.draw(g);
+        }
     }
 
     /**
@@ -50,9 +47,23 @@ public class Cara extends JPanel implements ActionListener {
 
     public void regenerate() {
         // clear the shapes list
-        //...
+        shapes.clear();
         
         // create random shapes 
-        // ... 
+        for (int i = 0; i < 30; i++){
+            int nextShape = random.nextInt(4);
+            switch(nextShape) {
+                case 0: shapes.add(new RandomCircle(800, 800));
+                    break;
+                case 1: shapes.add(new RandomStar(800, 800));
+                    break;
+                case 2: shapes.add(new RandomHeptagon(800, 800));
+                    break;
+                case 3: shapes.add(new RandomTriangle(800, 800));
+                    break;
+            }
+        }
+        
+        shapes.add(new randomartist.RandomPoem(300, 300));
     }
  }
