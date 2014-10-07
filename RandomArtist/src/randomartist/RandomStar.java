@@ -73,7 +73,12 @@ public class RandomStar extends RandomShape {
         // Set the color of the shape to 'color'
         g.setColor(color);
         
-        g.drawPolygon(coordinateX, coordinateY, 10);
+        boolean fill = random.nextBoolean();
+        if (fill) {
+            g.fillPolygon(coordinateX, coordinateY, 10);
+        } else {
+            g.drawPolygon(coordinateX, coordinateY, 10);
+        }
         
     }
 }

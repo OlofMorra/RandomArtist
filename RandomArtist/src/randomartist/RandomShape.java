@@ -26,7 +26,7 @@ abstract class RandomShape {
     public RandomShape( int maxX, int maxY ) {
         x = random.nextInt(maxX);
         y = random.nextInt(maxY);
-        getRandomColor();
+        getRandomColor(); // Gives object a random color
     }
     
     protected void getRandomColor() {
@@ -34,6 +34,8 @@ abstract class RandomShape {
         float r = random.nextFloat();
         float g = random.nextFloat();
         float b = random.nextFloat();
+        
+        // We choose to also add transparancy
         float a = random.nextFloat();
         
         color = new Color(r, g, b, a);

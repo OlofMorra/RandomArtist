@@ -22,9 +22,9 @@ public class RandomPoem extends RandomShape{
     public RandomPoem(int maxX, int maxY){
         super(maxX, maxY);
         
-        color = new Color(0,0,0);
+        color = new Color(0,0,0); // Override color to black opaque
         
-        int firstLineI = random.nextInt(4);
+        int firstLineI = random.nextInt(4); // Choose poem type
         
         switch(firstLineI) {
             case 0: poem.add("Yolo lol swag");
@@ -39,6 +39,13 @@ public class RandomPoem extends RandomShape{
     }
     
     void introduction() {
+        // Will print:
+        /**
+         * Once upon a time there was a [person] named [name].
+         * [gender] lived happily ever after.
+         * The end!
+        */
+        // No gender consistency guarantee! Use at own risk...
         String newLine = "";
         newLine += "Once upon a time there was a ";
         int person = random.nextInt(5);
@@ -82,6 +89,7 @@ public class RandomPoem extends RandomShape{
     }
     
     void hodor() {
+        // Hodor
         poem.add("Hodor");
         poem.add("Hodor");
         poem.add("Hodor");
@@ -89,6 +97,8 @@ public class RandomPoem extends RandomShape{
     }
     
     void potard() {
+        // Poptard tragedy original can be viewed here:
+        // https://www.youtube.com/watch?v=Mcn1Q9fWahM
         poem.add("Boy iz makin out wen girl asks:");
         poem.add("'Boy, will U get me potard?'");
         poem.add("He dus");
@@ -112,15 +122,18 @@ public class RandomPoem extends RandomShape{
     }
     
     void draw(Graphics g) {
-        Font f = new Font("Dialog", Font.PLAIN, 22);
         
+        // We use a large font so it's readivle
+        Font f = new Font("Dialog", Font.PLAIN, 28);
         g.setFont(f);
+        
+        // Setting the color
         g.setColor(color);
         
-        int lineHeight = 20;
+        int lineHeight = 50;
         for (String line : poem) {
             g.drawString(line, 25, lineHeight);
-            lineHeight += 20;
+            lineHeight += 30; // Lines are 30px apart
         }
     }
 }
