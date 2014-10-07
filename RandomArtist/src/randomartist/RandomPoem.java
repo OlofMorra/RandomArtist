@@ -5,6 +5,7 @@
 
 package randomartist;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Font;
 import java.util.ArrayList;
@@ -20,7 +21,9 @@ public class RandomPoem extends RandomShape{
 
     public RandomPoem(int maxX, int maxY){
         super(maxX, maxY);
-    
+        
+        color = new Color(0,0,0);
+        
         int firstLineI = random.nextInt(4);
         
         switch(firstLineI) {
@@ -67,12 +70,12 @@ public class RandomPoem extends RandomShape{
         }
         newLine += ".";
         poem.add(newLine);
-        int gender = random.nextInt(2);
+        boolean boy = random.nextBoolean();
         String genderStr;
-        if (gender == 0) {
-            genderStr = "he";
-        } else {
+        if (boy) {
             genderStr = "she";
+        } else {
+            genderStr = "he";
         }
         poem.add("And " + genderStr + " lived happily ever after.");
         poem.add("The end!");
@@ -110,7 +113,9 @@ public class RandomPoem extends RandomShape{
     
     void draw(Graphics g) {
         Font f = new Font("Dialog", Font.PLAIN, 22);
+        
         g.setFont(f);
+        g.setColor(color);
         
         int lineHeight = 20;
         for (String line : poem) {

@@ -34,8 +34,9 @@ abstract class RandomShape {
         float r = random.nextFloat();
         float g = random.nextFloat();
         float b = random.nextFloat();
-
-        color = Color.getHSBColor(r, g, b);
+        float a = random.nextFloat();
+        
+        color = new Color(r, g, b, a);
     }
     
     abstract void draw(Graphics g);
